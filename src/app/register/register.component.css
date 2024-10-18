@@ -1,0 +1,20 @@
+.form-bg {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .form-title {
+    font-weight: bold;
+    color: #d9534f;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+  a{
+    text-decoration: none;
+  }

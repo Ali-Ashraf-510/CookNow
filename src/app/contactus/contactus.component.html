@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Contact Us</title>
+</head>
+<body>
+
+  <div class="container mt-5 min-vh-100">
+    <h2 class="text-center">Contact Us</h2>
+    <form [formGroup]="contactusForm" (ngSubmit)="contactus()">
+      <div class="form-group mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter your name" required>
+        <div *ngIf="contactusForm.get('name')?.invalid && contactusForm.get('name')?.touched" class="text-danger">
+          Name is required (3-10 characters).
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter your email" required>
+        <div *ngIf="contactusForm.get('email')?.invalid && contactusForm.get('email')?.touched" class="text-danger">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="phone">Phone Number</label>
+        <input type="tel" class="form-control" formControlName="phone" id="phone" placeholder="Enter your phone number" required>
+        <div *ngIf="contactusForm.get('phone')?.invalid && contactusForm.get('phone')?.touched" class="text-danger">
+          Phone number must be 11 digits.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="message">Message</label>
+        <textarea class="form-control" formControlName="message" id="message" rows="4" placeholder="Type your message here" required></textarea>
+        <div *ngIf="contactusForm.get('message')?.invalid && contactusForm.get('message')?.touched" class="text-danger">
+          Message is required (minimum 3 characters).
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="contactusForm.invalid" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- team.component.html -->
+<div class="container team-section py-5">
+    <h2 class="text-center mb-5 display-4">Our Amazing Team</h2>
+    <div class="row justify-content-center">
+      <div *ngFor="let member of teamMembers" class="col-lg-4 col-md-4 col-sm-6 mb-4">
+        <div class="team-member card border-0 shadow-lg">
+          <div class="card-img-overlay overlay d-flex align-items-center justify-content-center">
+            <h5 class="overlay-text">{{ member.name }}</h5>
+          </div>
+          <img [src]="member.image" alt="{{ member.name }}" class="card-img-top team-photo" />
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ member.name }}</h5>
+            <p class="card-text">{{ member.position }}</p>
+            <div class="social-links">
+              <a *ngIf="member.linkedin" [href]="member.linkedin" target="_blank" class="mx-2"><i class="fab fa-linkedin"></i></a>
+              <a *ngIf="member.twitter" [href]="member.twitter" target="_blank" class="mx-2"><i class="fab fa-twitter"></i></a>
+              <a *ngIf="member.github" [href]="member.github" target="_blank" class="mx-2"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

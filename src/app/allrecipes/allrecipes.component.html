@@ -1,0 +1,38 @@
+<body class="pt-5">
+  <div class="container ">
+    <!-- Search Input -->
+    <div class="row mb-4">
+      <div class="col-md-8 mx-auto">
+        <div class="position-relative">
+          <input type="text" [(ngModel)]="searchTerm" class="form-control search-input" placeholder="Search recipes...">
+          <i class="fa fa-search search-icon"></i>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Recipe Cards -->
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-4" *ngFor="let recipe of filteredRecipes()">
+        <div class="card shadow-sm border-0 rounded-lg h-100 overflow-hidden position-relative product-card">
+          <div class="image-container">
+            <img [src]="recipe?.image || 'default-image.jpg'" class="card-img-top product-image" alt="{{ recipe?.name || 'Recipe' }}">
+            <div class="overlay">
+              <p class="overlay-text">Cuisine: {{ recipe.cuisine }}</p>
+              <p class="overlay-text">Calories: {{ recipe.caloriesPerServing }} kcal</p>
+              <p class="overlay-text">Prep Time: {{ recipe.prepTimeMinutes }} mins</p>
+              <p class="overlay-text">Cook Time: {{ recipe.cookTimeMinutes }} mins</p>
+            </div>
+          </div>
+          <div class="card-body d-flex flex-column text-center p-4">
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <button class="btn btn-primary mt-auto mx-auto rounded-pill px-4 py-2 text-uppercase product-btn"
+                    [routerLink]="['/recipe', recipe.id]">
+                    <i class="fas fa-eye"></i>  View Recipe
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>

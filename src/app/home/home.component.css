@@ -1,0 +1,399 @@
+/* Hero Section */
+.hero-section {
+    background-color: #fc9a58;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+.highlight {
+    color: #ff6600;
+    font-weight: 800;
+}
+
+.animate-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mt-4 {
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+/* Button Custom Style */
+.btn-lg-custom {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.btn-lg-custom:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Image */
+.hero-img {
+    max-width: 100%;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.hero-img:hover {
+    transform: scale(1.05);
+}
+
+/* Particle Background */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-heading {
+        font-size: 2rem;
+    }
+    .btn-lg-custom {
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-heading {
+        font-size: 1.8rem;
+    }
+    .btn-lg-custom {
+        width: 100%;
+        text-align: center;
+    }
+    .category-container img {
+        height: 100px;
+        width: auto;
+    }
+}
+
+/* Product Button Styling */
+.product-btn {
+    background: linear-gradient(135deg, #ff7a18, #e52e71);
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(229, 46, 113, 0.3);
+    text-transform: uppercase;
+}
+
+.product-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(229, 46, 113, 0.4);
+    background: linear-gradient(135deg, #ff7a18, #ff3d6e);
+}
+
+.product-btn:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: transform 0.5s ease;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+
+.product-btn:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+
+/* Popular Recipes Section */
+.popular-recipes {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.popular-recipes .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.recipe-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card img {
+    height: 150px; /* Set a fixed height */
+    width: 100%; /* Ensure the image fills the card's width */
+    object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
+}
+
+.recipe-card .btn {
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.recipe-card .btn:hover {
+    background-color: #e65c00;
+}
+
+/* Ensure all cards have the same height */
+.card {
+    height: 100%;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    border-radius: 8px 8px 0 0;
+    height: 200px;
+    width: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.card-title {
+    color: #ff5733; 
+
+}
+
+
+.card-text {
+    flex-grow: 1;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    border: none;
+    margin-top: auto;
+}
+
+.card .btn {
+    margin-top: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.services h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.service-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 40px;
+    color: #28a745;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.service-box:hover .service-icon {
+    color: #007bff;
+}
+
+.service-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .service-box {
+        margin-bottom: 30px;
+    }
+}
+
+/* Healthy Food Section */
+.healthy-food-section .card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.healthy-food-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.healthy-food-section .card-title {
+    color: #ff6600;
+    font-weight: 600;
+}
+
+.healthy-food-section .btn-outline-primary:hover {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+/* Container Adjustments */
+.container {
+    margin-top: 30px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    font-size: 14px;
+}
+
+.footer h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer .about-text {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #ff6600;
+}
+
+.footer .contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer .contact-info i {
+    font-size: 18px;
+}
+
+.footer .social-links a {
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: #ff6600;
+}
+
+.footer hr {
+    border-top: 1px solid #444;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+.footer p a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.footer p a:hover {
+    text-decoration: underline;
+}

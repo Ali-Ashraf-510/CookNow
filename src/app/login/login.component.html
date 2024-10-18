@@ -1,0 +1,26 @@
+<body class="pt-5">
+  <div class="container form-container d-flex justify-content-center align-items-center mt-5">
+      <form (ngSubmit)="login()" class="p-4 border rounded shadow-lg form-bg" style="width: 100%; max-width: 500px;">
+          <h2 class="form-title text-center mb-4">
+              <i class="fa-solid fa-right-to-bracket"></i> Log In
+          </h2>
+          
+          
+          <!-- Email -->
+          <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control form-control-lg rounded-pill" id="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required>
+          </div>
+  
+          <!-- Password -->
+          <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input type="password" class="form-control form-control-lg rounded-pill" id="password" [(ngModel)]="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <p class="ps-2">Don't have an account? <a routerLink="/register">Sign Up</a></p>
+
+          <!-- Submit Button -->
+          <button class="btn btn-warning btn-lg w-100 rounded-pill mt-4" type="submit">Login</button>
+      </form>
+  </div>
+</body>

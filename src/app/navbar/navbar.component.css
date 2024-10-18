@@ -1,0 +1,81 @@
+ 
+
+
+.logo{
+    width: 40px; 
+    height: auto;
+     margin-right: 8px;
+    }
+    
+*::selection {
+        background: #fec260; 
+        color: black; 
+     }
+.navbar {
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        z-index: 1000; 
+    }
+        
+     
+      
+.navbar{
+    background: linear-gradient(45deg, rgb(255, 255, 255), #eeee);
+}
+.navbar-brand {
+    transition: transform 0.3s ease;
+    font-size: 1.8rem; font-weight: bold;
+    font-family: 'Poppins'sans-serif;
+    color: #d37014;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Poppins'sans-serif;
+    color: #d37014;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #d37014;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #d37014;
+}
+
+.navbar-toggler-icon {
+    color: #d37014;
+}
+
+/* Box Shadow for Depth */
+.shadow-sm {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}

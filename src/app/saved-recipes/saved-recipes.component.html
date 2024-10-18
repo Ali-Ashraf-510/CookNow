@@ -1,0 +1,25 @@
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 section-title">Saved Recipes</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let recipe of savedRecipes; let i = index">
+                <div class="card shadow-sm">
+                    <img [src]="recipe.image" class="card-img-top" alt="{{ recipe.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe.name }}</h5>
+                        <p class="card-text"><strong>Cuisine:</strong> {{ recipe.cuisine }}</p>
+                        <p class="card-text"><strong>Calories:</strong> {{ recipe.caloriesPerServing }}</p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary" [routerLink]="['/recipe', recipe.id]">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-danger" (click)="delete(i)">
+                                <i class="fas fa-trash-alt"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

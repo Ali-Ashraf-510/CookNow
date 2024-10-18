@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container">
+        <!-- Brand Name with Custom Font -->
+        <a routerLink="home" class="navbar-brand d-flex logo-link" style="font-family: 'Roboto', sans-serif; font-weight: bold;">
+            <img src="../../assets/images/icons/android-chrome-512x512.png" alt="" class="logo">Cook Now
+        </a>
+
+        <!-- Navbar Toggler Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <!-- Home Link with Icon -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="home" routerLinkActive="active"><i class="fas fa-home"></i> Home</a>
+                </li>
+
+                <!-- Recipes Link -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="allrecipes" routerLinkActive="active" *ngIf="logined">
+                        <i class="fas fa-utensils"></i> All Recipes
+                    </a>
+                </li>
+
+                <!-- About Us Link -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="aboutus" routerLinkActive="active"><i class="fas fa-info-circle"></i> About Us</a>
+                </li>
+
+                <!-- Contact Us Link -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="contactus" routerLinkActive="active"><i class="fas fa-phone"></i> Contact Us</a>
+                </li>
+
+                <!-- Saved Recipes Link -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="saved-recipes" routerLinkActive="active" *ngIf="logined">
+                        <i class="fa-solid fa-heart"></i> Saved Recipes {{mySavedCount}}
+                    </a>
+                </li>
+
+                <!-- Sign Up Link -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="register" routerLinkActive="active" *ngIf="!logined">
+                        <i class="fa-solid fa-right-to-bracket"></i> Sign Up
+                    </a>
+                </li>
+
+                <!-- Login Link -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="login" routerLinkActive="active" *ngIf="!logined">
+                        <i class="fa-solid fa-right-to-bracket"></i> Login
+                    </a>
+                </li>
+
+               
+            </ul>
+        </div>
+        
+    </div>
+    <button *ngIf="logined" (click)="logOut()" class="btn btn-outline-danger me-5  rounded-pill">
+        Log Out <i class="fa-solid fa-right-from-bracket"></i>
+    </button>
+</nav>

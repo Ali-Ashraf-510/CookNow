@@ -1,0 +1,198 @@
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+        <!-- Particles.js Container -->
+        <div id="particles-js"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-heading animate-text">Cook Like a Pro with Our <span class="highlight">Easy</span> and <span class="highlight">Tasty</span> Recipes</h1>
+                    <p class="mt-4 animate-text">From quick and easy meals to gourmet delights, we have something for every taste and occasion.</p>
+                    <a [routerLink]="['/allrecipes']">
+                        <button class="btn-lg-custom mt-3">Explore All Recipes</button>
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                    <img src="../../assets/images/background/home_background.jpg" alt="Chef" class="img-fluid hero-img shadow-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Popular Recipes Section -->
+    <section class="popular-recipes">
+        <div class="container">
+            <h2 class="section-title text-center my-4">Popular Recipes You Can't Miss</h2> 
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col" *ngFor="let recipe of randomRecipes()">
+                    <div class="card recipe-card h-100">
+                        <img [src]="recipe?.image || 'default-image.jpg'" class="card-img-top" alt="Classic Margherita Pizza">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-3 ">{{ recipe.name }}</h5> 
+                            <p class="card-title">Calories : {{recipe.caloriesPerServing}}</p>
+                            <p class="card-title  mealtype">Meal Type: {{recipe.mealType}}</p>
+                            <p class="card-title">Rating: {{ recipe.rating }} ({{recipe.reviewCount}} reviews)</p> 
+                            <button class="btn btn-primary mt-auto mx-auto rounded-pill px-4 py-2 text-uppercase product-btn" [routerLink]="['/recipe', recipe.id]">View Recipe</button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- healthy food -->
+    <section class="healthy-food-section mx-auto">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Healthy Food Choices</h2>
+            <div class="row">
+                <div class="col-md-4" *ngFor="let recipe of randomHealthyRecipes()">
+                    <div class="card h-100">
+                        <img [src]="recipe?.image || 'default-image.jpg'" class="card-img-top" class="card-img-top" alt="{{recipe.name}}">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">{{recipe.name}}</h5>
+                            <p class="card-title">Calories : {{recipe.caloriesPerServing}}</p>
+                            <p class="card-title  mealtype">Meal Type: {{recipe.mealType}}</p>
+                            <p class="card-title">Rating: {{ recipe.rating }} ({{recipe.reviewCount}} reviews)</p>
+                            <button class="btn btn-primary mt-auto mx-auto rounded-pill px-4 py-2 text-uppercase product-btn" [routerLink]="['/recipe', recipe.id]">View Recipe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <div class="container healthy-food-section mx-auto">
+        <h2>Smoothie Juice</h2>
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="../../assets/images/Jucie/juice-1.jpg" class="card-img-top" alt="Blueberry Banana Smoothie">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Blueberry Banana Smoothie</h5>
+                        <p class="card-text flex-grow-1">"Blueberry Banana Smoothie is a tasty and healthy drink that combines blueberries and creamy bananas, perfect for an energizing start to your day.</p>
+                        <button class="btn btn-primary mt-auto mx-auto rounded-pill px-4 py-2 text-uppercase product-btn"[routerLink]="['/recipe', 22]">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="../../assets/images/Jucie/juice-2.jpg" class="card-img-top" alt="Mango Lassi">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Mango Lassi</h5>
+                        <p class="card-text flex-grow-1">Mango Lassi is a refreshing and creamy yogurt-based drink made with ripe mangoes, perfect for cooling down on a hot day."</p>
+                        <button class="btn btn-primary mt-auto mx-auto rounded-pill px-4 py-2 text-uppercase product-btn"[routerLink]="['/recipe', 25]">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="../../assets/images/Jucie/juice-3.jpg" class="card-img-top" alt="Brazilian Caipirinha">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Brazilian Caipirinha</h5>
+                        <p class="card-text flex-grow-1">Brazilian Caipirinha is a classic cocktail made with cachaça, fresh lime, and sugar, offering a vibrant and refreshing taste of Brazil.</p>
+                        <button class="btn btn-primary mt-auto mx-auto rounded-pill px-4 py-2 text-uppercase product-btn"[routerLink]="['/recipe', 30]">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <section class="services">
+        <div class="container text-center">
+            <h2 class="mb-5">OUR AWESOME SERVICES</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="service-box">
+                        <i class="fas fa-utensils service-icon"></i>
+                        <h3>Quality Food</h3>
+                        <p>Search 2 million recipes using keywords, 30 minutes or less, and diet and health filters.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="service-box">
+                        <i class="fas fa-bowl-rice service-icon"></i>
+                        <h3>Cook like a Chef</h3>
+                        <p>Search 2 million recipes using keywords, 30 minutes or less, and diet and health filters.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="service-box">
+                        <i class="fas fa-pepper-hot service-icon"></i>
+                        <h3>Ingredients</h3>
+                        <p>Search 2 million recipes using keywords, 30 minutes or less, and diet and health filters.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="service-box">
+                        <i class="fas fa-blender service-icon"></i>
+                        <h3>Easy Recipes</h3>
+                        <p>Search 2 million recipes using keywords, 30 minutes or less, and diet and health filters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Footer -->
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-white pt-5 pb-4" >
+        <div class="container">
+            <div class="row">
+                <!-- About Us Section -->
+                <div class="col-md-4" >
+                    <h5>About Us</h5>
+                    <p class="about-text">We are dedicated to bringing you the healthiest recipes and tips to maintain a balanced lifestyle. Discover a variety of nutritious meal ideas and make healthy eating a daily habit.</p>
+                </div>
+                
+                <!-- Quick Links Section -->
+                <div class="col-md-2" >
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><a routerLink="/home" class="text-white hov">Home</a></li>
+                        <li><a routerLink="/allrecipes" class="text-white">Recipes</a></li>
+                        <li><a routerLink="/contactus" class="text-white">Contact Us</a></li>
+                        <li><a routerLink="/aboutus" class="text-white">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info Section -->
+                <div class="col-md-3" >
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled contact-info ">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Healthy Street, Food City</li>
+                        <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> infohealthyrecipes.com</li>
+                    </ul>
+                </div>
+    
+                <!-- Social Media Section -->
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <div class="social-links" >
+                        <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <hr class="bg-light">
+            
+            <!-- Copyright and Privacy Policy -->
+            <div class="row text-center" >
+                <div class="col-md-12" >
+                    <p class="mb-0">&copy; 2024 Healthy Recipes. All rights reserved. <a href="#" class="text-white">Privacy Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    </body>

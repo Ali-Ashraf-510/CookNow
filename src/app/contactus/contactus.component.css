@@ -1,0 +1,104 @@
+/* Container styling for form */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px;
+  background-color: #7e1212; /* Pure white background */
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Bolder shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+/* Hover effect for container */
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Form header */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Form structure */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 15px 0 5px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Input fields and textarea styling */
+input, textarea {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus state for input and textarea */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #ff6b6b; /* Bold red for focus */
+  box-shadow: 0 0 12px rgba(255, 107, 107, 0.5); /* Glowing effect */
+}
+
+/* Button styling */
+button {
+  padding: 15px;
+  background: linear-gradient(45deg, #ff6b6b, #f06595); /* Bold gradient */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background: linear-gradient(45deg, #f06595, #ff6b6b); /* Reverse the gradient */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Background styling */
+body {
+  background: linear-gradient(135deg, #1d2b64, #f8cdda); /* Bold gradient */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  padding: 100px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
+.text-danger {
+  color: #ff6b6b; /* Red color for errors */
+  font-size: 0.9rem;
+}

@@ -1,0 +1,64 @@
+<body class="pt-5">
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <img [src]="recipe?.image" alt="{{ recipe.name }}" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <h2>{{ recipe?.name }}</h2>
+          <p><strong>Cuisine:</strong> {{ recipe.cuisine }}</p>
+          <p><strong>Calories per Serving:</strong> {{ recipe.caloriesPerServing }}</p>
+          <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+          <p><strong>Prep Time:</strong> {{ recipe.prepTimeMinutes }} mins</p>
+          <p><strong>Cook Time:</strong> {{ recipe.cookTimeMinutes }} mins</p>
+          <p><strong>Difficulty:</strong> {{ recipe.difficulty }}</p>
+          <p><strong>Rating:</strong> {{ recipe.rating }} ({{ recipe.reviewCount }} reviews)</p>
+        </div>
+      </div>
+    
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <h3 class="mb-4 text-center">Recipe Details</h3>
+          
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+              <h5 class="mb-0">Ingredients</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+                  <i class="fas fa-check-circle"></i> {{ ingredient }}
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="card">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0">Instructions</h5>
+            </div>
+            <div class="card-body">
+              <ol class="list-group bgg">
+                <li class="list-group-item" *ngFor="let instruction of recipe.instructions">
+                  <i class="fas fa-arrow-right"></i> {{ instruction }}
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4 d-flex justify-content-center">
+        <div class="position-relative">
+            <button class="btn btn-primary m-3 "(click)="saveRecipe(recipe)">Save Recipe <i class="fa-solid fa-heart"></i></button>
+
+        </div>
+        <button class="btn btn-secondary m-3 " (click)="copyLink()">Share Recipe <i class="fa-solid fa-share"></i></button>
+      </div>
+      <div id="toast" class="toast hidden position-absolute">Link copied to clipboard!</div>
+
+
+      
+      
+    </div>
+  </body>
+  
