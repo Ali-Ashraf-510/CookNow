@@ -14,17 +14,17 @@ export class DiscoverteamComponent {
       name: 'Ali Ashraf',
       position: 'Project Manager',
       image: '../../assets/images/personal/ali_ashraf(1).jpg',
-      linkedin: 'https://linkedin.com/in/johndoe',
-      twitter: 'https://twitter.com/johndoe',
-      github: 'https://github.com/johndoe'
+      linkedin: 'https://www.linkedin.com/in/ali-ashraf-b96672332/',
+      twitter: 'https://x.com/alijustwrites',
+      github: 'https://github.com/Ali-Ashraf-510'
     },
     {
       name: 'Ali Ibrahim',
       position: 'Founder and CTO',
       image: '../../assets/images/personal/ali ibrahim.jpg',
-      linkedin: 'https://linkedin.com/in/janesmith',
-      twitter: 'https://twitter.com/janesmith',
-      github: 'https://github.com/janesmith'
+      linkedin: 'https://www.linkedin.com/in/ali-ibrahim-854156252',
+      twitter: 'https://x.com/AbrahimEal26695?t=htGuGK6So73QWN5k_UlCMg&s=09',
+      github: 'https://github.com/AliIbrahi1242003'
     },
     {
       name: 'Farouq Mohamed',
