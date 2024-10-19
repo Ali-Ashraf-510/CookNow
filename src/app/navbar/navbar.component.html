@@ -11,7 +11,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navbar Links -->
+        <!-- Navbar Links (collapsible in small screens) -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <!-- Home Link with Icon -->
@@ -20,49 +20,52 @@
                 </li>
 
                 <!-- Recipes Link -->
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="allrecipes" routerLinkActive="active" *ngIf="logined">
+                <li class="nav-item" *ngIf="logined">
+                    <a class="nav-link" routerLink="allrecipes" routerLinkActive="active">
                         <i class="fas fa-utensils"></i> All Recipes
                     </a>
                 </li>
 
                 <!-- About Us Link -->
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="aboutus" routerLinkActive="active"><i class="fas fa-info-circle"></i> About Us</a>
+                    <a class="nav-link" routerLink="aboutus" routerLinkActive="active">
+                        <i class="fas fa-info-circle"></i> About Us</a>
                 </li>
 
                 <!-- Contact Us Link -->
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="contactus" routerLinkActive="active"><i class="fas fa-phone"></i> Contact Us</a>
+                    <a class="nav-link" routerLink="contactus" routerLinkActive="active">
+                        <i class="fas fa-phone"></i> Contact Us</a>
                 </li>
 
                 <!-- Saved Recipes Link -->
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="saved-recipes" routerLinkActive="active" *ngIf="logined">
+                <li class="nav-item" *ngIf="logined">
+                    <a class="nav-link" routerLink="saved-recipes" routerLinkActive="active">
                         <i class="fa-solid fa-heart"></i> Saved Recipes {{mySavedCount}}
                     </a>
                 </li>
 
                 <!-- Sign Up Link -->
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="register" routerLinkActive="active" *ngIf="!logined">
+                <li class="nav-item" *ngIf="!logined">
+                    <a class="nav-link" routerLink="register" routerLinkActive="active">
                         <i class="fa-solid fa-right-to-bracket"></i> Sign Up
                     </a>
                 </li>
 
                 <!-- Login Link -->
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="login" routerLinkActive="active" *ngIf="!logined">
+                <li class="nav-item" *ngIf="!logined">
+                    <a class="nav-link" routerLink="login" routerLinkActive="active">
                         <i class="fa-solid fa-right-to-bracket"></i> Login
                     </a>
                 </li>
 
-               
+                <!-- Log Out Button (inside collapsible menu) -->
+                <li class="nav-item" *ngIf="logined">
+                    <button (click)="logOut()" class="btn btn-outline-danger rounded-pill nav-link">
+                        Log Out <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </li>
             </ul>
         </div>
-        
     </div>
-    <button *ngIf="logined" (click)="logOut()" class="btn btn-outline-danger me-5  rounded-pill">
-        Log Out <i class="fa-solid fa-right-from-bracket"></i>
-    </button>
 </nav>
