@@ -30,33 +30,33 @@ export class DiscoverteamComponent {
       name: 'Farouq Mohamed',
       position: 'Founder and CTO',
       image: '../../assets/images/personal/farouq.jpg',
-      linkedin: 'https://linkedin.com/in/johndoe',
-      twitter: 'https://twitter.com/johndoe',
-      github: 'https://github.com/johndoe'
+      linkedin: 'http://www.linkedin.com/in/farouk-elghanam-2985012a6',
+      twitter: 'https://x.com/farouq_1111',
+      github: 'https://github.com/Farouk52'
     },
     {
-      name: 'Abdul Rahman Ahmad ',
+      name: 'AbdulRahman Ahmad ',
       position: 'Devolper',
-      image: 'path-to-image/jane.jpg',
-      linkedin: 'https://linkedin.com/in/janesmith',
-      twitter: 'https://twitter.com/janesmith',
-      github: 'https://github.com/janesmith'
+      image: 'path-to-image/AbdulRahman.jpg',
+      linkedin: 'https://linkedin.com/in/AbdulRahman',
+      twitter: 'https://twitter.com/AbdulRahman',
+      github: 'https://github.com/AbdulRahman'
     },
     {
       name: 'Habiba Osama',
       position: 'Devolper',
       image: '../../assets/images/personal/',
-      linkedin: 'https://linkedin.com/in/johndoe',
-      twitter: 'https://twitter.com/johndoe',
-      github: 'https://github.com/johndoe'
+      linkedin: 'https://linkedin.com/in/Habiba',
+      twitter: 'https://twitter.com/Habiba',
+      github: 'https://github.com/Habiba'
     },
     {
       name: 'hanna magdy',
       position: 'Devolper',
       image: 'path-to-image/jane.jpg',
-      linkedin: 'https://linkedin.com/in/janesmith',
-      twitter: 'https://twitter.com/janesmith',
-      github: 'https://github.com/janesmith'
+      linkedin: 'https://linkedin.com/in/hanna',
+      twitter: 'https://twitter.com/hanna',
+      github: 'https://github.com/hanna'
     },
   ];
 }
