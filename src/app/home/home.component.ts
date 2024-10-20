@@ -13,52 +13,36 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent  {
   Recipes: any[] = []; 
   
-  
 
-  
-  constructor(public _DataService: DataService, private route: ActivatedRoute) {
-    // هنا بنستخدم الـDataService علشان نجيب البيانات من السيرفر (الـAPI)
-    // و ActivatedRoute علشان نتعامل مع معلومات الراوت (زي قراءة البارامترات اللي بتيجي في الـURL)
-  }
+  constructor(public _DataService: DataService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // دي دالة Angular بتنادي عليها أول ما الكومبوننت يبدأ يشتغل
+    // جلب الوصفات عند تهيئة الكومبوننت
     this._DataService.getAllRecipes().subscribe((data) => {
-      // هنا بننادي على دالة getAllRecipes من DataService علشان نجيب البيانات من الـAPI
-      this.Recipes = data.recipes;  // بعد ما البيانات ترجع، بنخزنها في مصفوفة Recipes
+      this.Recipes = data.recipes;
     });
   }
 
-  randomRecipes() {
-    const shuffled = this.Recipes.sort(() => 0.5 - Math.random()); 
-    // الدالة دي بتعيد ترتيب مصفوفة Recipes بشكل عشوائي باستخدام Math.random
-    return shuffled.slice(0, 4);  
-    // بعد إعادة الترتيب، بنرجع أول 4 وصفات عشوائية من المصفوفة
+  // دالة عامة لإعادة الترتيب العشوائي
+  shuffleArray(array: any[]): any[] {
+    return array.sort(() => 0.5 - Math.random());
   }
 
-  healthyRecipes = [
-    { id: 2 }, { id: 6 }, { id: 9 }, { id: 17 }, 
-    { id: 18 }, { id: 21 }, { id: 25 }, { id: 29 }
-  ]; 
-  // دي مصفوفة IDs للوصفات الصحية اللي عايزين نعرضها في الكومبوننت
+  // جلب 4 وصفات عشوائية
+  randomRecipes(): any[] {
+    return this.shuffleArray(this.Recipes).slice(0, 4);
+  }
 
-  randomHealthyRecipes() {
-    const ids = this.healthyRecipes.map(recipe => recipe.id);
-    // بنجيب كل الـIDs اللي موجودة في healthyRecipes
-    const filteredRecipes = this.Recipes.filter(recipe => ids.includes(recipe.id));
-    // بنفلتر الوصفات اللي موجودة في Recipes علشان نجيب الوصفات اللي الـIDs بتاعتها موجودة في healthyRecipes
-    const shuffled = filteredRecipes.sort(() => 0.5 - Math.random());
-    // بنعمل Shuffle للوصفات الصحية اللي طلعناها من الفلترة
-    return shuffled.slice(0, 3);  
-    // بنرجع أول 3 وصفات صحية بشكل عشوائي
+
+  healthyRecipeIds: number[] = [2, 6, 9, 17, 18, 21, 25];
+  // فلترة الوصفات الصحية وإرجاع 3 وصفات عشوائية منها
+  randomHealthyRecipes(): any[] {
+    const filteredRecipes = this.Recipes.filter(recipe => 
+      this.healthyRecipeIds.includes(recipe.id)
+    );
+    return this.shuffleArray(filteredRecipes).slice(0, 3);
   }
 }
-// الشرح باختصار داخل الكود:
-// استيراد المكونات والخدمات اللي هنحتاجها في الكومبوننت.
-// تعريف الكومبوننت HomeComponent علشان يعرض الوصفات اللي بتيجي من السيرفر.
-// استخدام دالة ngOnInit علشان نجيب البيانات أول ما الصفحة تفتح.
-// دوال زي randomRecipes و randomHealthyRecipes بتستخدم لإعادة ترتيب الوصفات بشكل عشوائي وعرض بعض الوصفات الصحية بناءً على IDs معينة.
-
 
 
 
